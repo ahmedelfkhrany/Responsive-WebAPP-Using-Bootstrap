@@ -1,0 +1,33 @@
+@mixin debug {
+  border: 1px solid red !important;
+
+  & > * {
+    border: 1px solid blue !important;
+  }
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+%overlay {
+  @include flex(column, center, center);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  color: white;
+  font-size: 1.5rem;
+
+  opacity: 0;
+  background: linear-gradient(
+    rgba(219, 116, 117, 0.9),
+    rgba(228, 205, 125, 0.9)
+  );
+}
